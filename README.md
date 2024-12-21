@@ -11,65 +11,65 @@ The network consists of three main blocks:
 
 ### Layer-by-Layer Breakdown 
 
-                                     Model Architecture
-                                     ==================
+                        Model Architecture
+                        ==================
 
-                                Input Image (1×28×28)
-                                        ↓
-                                ┌───────────────────┐
-                                │ Conv1 (3×3)       │
-                                │ Output: 8×26×26   │──→ ReLU ──→ Dropout ──→ BatchNorm
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ Conv2 (3×3)       │
-                                │ Output: 12×24×24  │──→ ReLU ──→ Dropout ──→ BatchNorm
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ Conv3 (3×3)       │
-                                │ Output: 16×22×22  │──→ ReLU ──→ Dropout ──→ BatchNorm
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ MaxPool2d (2×2)   │
-                                │ Output: 16×11×11  │
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ Antenna Conv (1×1)│
-                                │ Output: 8×11×11   │──→ ReLU ──→ Dropout ──→ BatchNorm
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ Conv4 (3×3)       │
-                                │ Output: 10×9×9    │──→ ReLU ──→ Dropout ──→ BatchNorm
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ Conv5 (3×3)       │
-                                │ Output: 14×7×7    │──→ ReLU ──→ Dropout ──→ BatchNorm
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ Conv6 (3×3)       │
-                                │ Output: 16×5×5    │──→ ReLU ──→ Dropout ──→ BatchNorm
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ AvgPool2d (5×5)   │
-                                │ Output: 16×1×1    │
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │ Conv7 (1×1)       │
-                                │ Output: 10×1×1    │
-                                └───────────────────┘
-                                        ↓
-                                ┌───────────────────┐
-                                │    LogSoftmax     │
-                                │ Output: 10 classes│
-                                └───────────────────┘
+                Input Image (1×28×28)
+                        ↓
+                ┌───────────────────┐
+                │ Conv1 (3×3)       │
+                │ Output: 8×26×26   │──→ ReLU ──→ Dropout ──→ BatchNorm
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ Conv2 (3×3)       │
+                │ Output: 12×24×24  │──→ ReLU ──→ Dropout ──→ BatchNorm
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ Conv3 (3×3)       │
+                │ Output: 16×22×22  │──→ ReLU ──→ Dropout ──→ BatchNorm
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ MaxPool2d (2×2)   │
+                │ Output: 16×11×11  │
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ Antenna Conv (1×1)│
+                │ Output: 8×11×11   │──→ ReLU ──→ Dropout ──→ BatchNorm
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ Conv4 (3×3)       │
+                │ Output: 10×9×9    │──→ ReLU ──→ Dropout ──→ BatchNorm
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ Conv5 (3×3)       │
+                │ Output: 14×7×7    │──→ ReLU ──→ Dropout ──→ BatchNorm
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ Conv6 (3×3)       │
+                │ Output: 16×5×5    │──→ ReLU ──→ Dropout ──→ BatchNorm
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ AvgPool2d (5×5)   │
+                │ Output: 16×1×1    │
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │ Conv7 (1×1)       │
+                │ Output: 10×1×1    │
+                └───────────────────┘
+                        ↓
+                ┌───────────────────┐
+                │    LogSoftmax     │
+                │ Output: 10 classes│
+                └───────────────────┘
 
 ### Network Details
 
@@ -98,32 +98,32 @@ The network consists of three main blocks:
 - Strategic use of pooling layers
 
 
-                The above model is developed in Three phases.
-                Phase 1: Model Development
-                        a lighter model is considered with around 7042 parameters.in S7_1.ipynb file.
-                        target accuracy is 99.4
-                        Result:
-                                train accuracy: 99.0
-                                test accuracy: 98.72
-                                parameters: 7042
-                                Analysis:
-                                        The model is has less gap between train and test accuracies
-                                        The model is not able to generalize the data.
-                                        The model can be furture imporoved through regularization, BatchNormalxaion and Image augmentation
+        The above model is developed in Three phases.
+        Phase 1: Model Development
+                a lighter model is considered with around 7042 parameters.in S7_1.ipynb file.
+                target accuracy is 99.4
+                Result:
+                        train accuracy: 99.0
+                        test accuracy: 98.72
+                        parameters: 7042
+                        Analysis:
+                                The model is has less gap between train and test accuracies
+                                The model is not able to generalize the data.
+                                The model can be furture imporoved through regularization, BatchNormalxaion and Image augmentation
 
-                Phase2: Model is considered with around 7210 parameters.in S7_2.ipynb file.
-                        target accuracy is 99.4
-                        Result:
-                                train accuracy: 99.10
-                                test accuracy: 99.35
-                                parameters: 7210
-                                Analysis:
-                                        After adding dropout 0.05 the model performance is improved.
-                                        The model is clearly underfitting the data. and gap is small
-                                        The model training accuracy can be increased by introducing the image augmentation and introducing the scheduler
+        Phase2: Model is considered with around 7210 parameters.in S7_2.ipynb file.
+                target accuracy is 99.4
+                Result:
+                        train accuracy: 99.10
+                        test accuracy: 99.35
+                        parameters: 7210
+                        Analysis:
+                                After adding dropout 0.05 the model performance is improved.
+                                The model is clearly underfitting the data. and gap is small
+                                The model training accuracy can be increased by introducing the image augmentation and introducing the scheduler
 
-Phase3: Model is considered with around same 7210 parameters.in S7_3.ipynb file.
-        since no parameters were introduced, the model is same as phase 2.but the model is improved by adding the image augmentation and scheduler. and playing with the learning rate.
+        Phase3: Model is considered with around same 7210 parameters.in S7_3.ipynb file.
+                since no parameters were introduced, the model is same as phase 2.but the model is improved by adding the image augmentation and scheduler. and playing with the learning rate.
 
 
         target accuracy is 99.4
