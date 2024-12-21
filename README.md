@@ -14,62 +14,62 @@ The network consists of three main blocks:
                                      Model Architecture
                                      ==================
 
-Input Image (1×28×28)
-        ↓
-┌───────────────────┐
-│ Conv1 (3×3)       │
-│ Output: 8×26×26   │──→ ReLU ──→ Dropout ──→ BatchNorm
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ Conv2 (3×3)       │
-│ Output: 12×24×24  │──→ ReLU ──→ Dropout ──→ BatchNorm
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ Conv3 (3×3)       │
-│ Output: 16×22×22  │──→ ReLU ──→ Dropout ──→ BatchNorm
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ MaxPool2d (2×2)   │
-│ Output: 16×11×11  │
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ Antenna Conv (1×1)│
-│ Output: 8×11×11   │──→ ReLU ──→ Dropout ──→ BatchNorm
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ Conv4 (3×3)       │
-│ Output: 10×9×9    │──→ ReLU ──→ Dropout ──→ BatchNorm
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ Conv5 (3×3)       │
-│ Output: 14×7×7    │──→ ReLU ──→ Dropout ──→ BatchNorm
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ Conv6 (3×3)       │
-│ Output: 16×5×5    │──→ ReLU ──→ Dropout ──→ BatchNorm
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ AvgPool2d (5×5)   │
-│ Output: 16×1×1    │
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│ Conv7 (1×1)       │
-│ Output: 10×1×1    │
-└───────────────────┘
-        ↓
-┌───────────────────┐
-│    LogSoftmax     │
-│ Output: 10 classes│
-└───────────────────┘
+                                Input Image (1×28×28)
+                                        ↓
+                                ┌───────────────────┐
+                                │ Conv1 (3×3)       │
+                                │ Output: 8×26×26   │──→ ReLU ──→ Dropout ──→ BatchNorm
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ Conv2 (3×3)       │
+                                │ Output: 12×24×24  │──→ ReLU ──→ Dropout ──→ BatchNorm
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ Conv3 (3×3)       │
+                                │ Output: 16×22×22  │──→ ReLU ──→ Dropout ──→ BatchNorm
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ MaxPool2d (2×2)   │
+                                │ Output: 16×11×11  │
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ Antenna Conv (1×1)│
+                                │ Output: 8×11×11   │──→ ReLU ──→ Dropout ──→ BatchNorm
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ Conv4 (3×3)       │
+                                │ Output: 10×9×9    │──→ ReLU ──→ Dropout ──→ BatchNorm
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ Conv5 (3×3)       │
+                                │ Output: 14×7×7    │──→ ReLU ──→ Dropout ──→ BatchNorm
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ Conv6 (3×3)       │
+                                │ Output: 16×5×5    │──→ ReLU ──→ Dropout ──→ BatchNorm
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ AvgPool2d (5×5)   │
+                                │ Output: 16×1×1    │
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │ Conv7 (1×1)       │
+                                │ Output: 10×1×1    │
+                                └───────────────────┘
+                                        ↓
+                                ┌───────────────────┐
+                                │    LogSoftmax     │
+                                │ Output: 10 classes│
+                                └───────────────────┘
 
 ### Network Details
 
@@ -97,7 +97,7 @@ Input Image (1×28×28)
 - Mix of 3×3 and 1×1 convolutions
 - Strategic use of pooling layers
 
-
+`
 The above model is developed in Three phases.
 Phase 1: Model Development
          a lighter model is considered with around 7042 parameters.in S7_1.ipynb file.
@@ -133,7 +133,7 @@ Phase3: Model is considered with around same 7210 parameters.in S7_3.ipynb file.
                 paramters: 7210
                 Analysis, the image augmentation with a learning rate of 0.03 has certainly improved accuarcy and was able to acheive 99.4 twice and the modle is underfitting
 
-
+`
 
 
 
