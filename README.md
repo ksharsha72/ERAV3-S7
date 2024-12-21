@@ -97,30 +97,30 @@ The network consists of three main blocks:
 - Mix of 3×3 and 1×1 convolutions
 - Strategic use of pooling layers
 
-`
-The above model is developed in Three phases.
-Phase 1: Model Development
-         a lighter model is considered with around 7042 parameters.in S7_1.ipynb file.
-         target accuracy is 99.4
-         Result:
-                train accuracy: 99.0
-                test accuracy: 98.72
-                parameters: 7042
-                Analysis:
-                        The model is has less gap between train and test accuracies
-                        The model is not able to generalize the data.
-                        The model can be furture imporoved through regularization, BatchNormalxaion and Image augmentation
 
-Phase2: Model is considered with around 7210 parameters.in S7_2.ipynb file.
-         target accuracy is 99.4
-         Result:
-                train accuracy: 99.10
-                test accuracy: 99.35
-                parameters: 7210
-                Analysis:
-                        After adding dropout 0.05 the model performance is improved.
-                        The model is clearly underfitting the data. and gap is small
-                        The model training accuracy can be increased by introducing the image augmentation and introducing the scheduler
+                The above model is developed in Three phases.
+                Phase 1: Model Development
+                        a lighter model is considered with around 7042 parameters.in S7_1.ipynb file.
+                        target accuracy is 99.4
+                        Result:
+                                train accuracy: 99.0
+                                test accuracy: 98.72
+                                parameters: 7042
+                                Analysis:
+                                        The model is has less gap between train and test accuracies
+                                        The model is not able to generalize the data.
+                                        The model can be furture imporoved through regularization, BatchNormalxaion and Image augmentation
+
+                Phase2: Model is considered with around 7210 parameters.in S7_2.ipynb file.
+                        target accuracy is 99.4
+                        Result:
+                                train accuracy: 99.10
+                                test accuracy: 99.35
+                                parameters: 7210
+                                Analysis:
+                                        After adding dropout 0.05 the model performance is improved.
+                                        The model is clearly underfitting the data. and gap is small
+                                        The model training accuracy can be increased by introducing the image augmentation and introducing the scheduler
 
 Phase3: Model is considered with around same 7210 parameters.in S7_3.ipynb file.
         since no parameters were introduced, the model is same as phase 2.but the model is improved by adding the image augmentation and scheduler. and playing with the learning rate.
@@ -133,7 +133,7 @@ Phase3: Model is considered with around same 7210 parameters.in S7_3.ipynb file.
                 paramters: 7210
                 Analysis, the image augmentation with a learning rate of 0.03 has certainly improved accuarcy and was able to acheive 99.4 twice and the modle is underfitting
 
-`
+
 
 
 
